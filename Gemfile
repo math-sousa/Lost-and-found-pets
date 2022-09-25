@@ -44,6 +44,9 @@ gem "bootsnap", require: false
 
 gem 'pg'
 
+# Test Coverage
+gem 'simplecov', require: false, group: :test
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
