@@ -10,6 +10,7 @@ on:
     paths:
       - src/*
       - test/*
+      - *.json
       - yarn.lock
   pull_request:
     paths:
