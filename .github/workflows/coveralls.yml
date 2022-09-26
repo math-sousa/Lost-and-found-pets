@@ -12,16 +12,22 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      # Add or replace dependency steps here
+        
       - name: Ruby and Gems install
         uses: ruby/setup-ruby@0a29871fe2b0200a17a4497bae54fe5df0d973aa # v1.115.3
         with:
           bundler-cache: true
-      # Add or replace test runners here
+          
       - name: Run Tests
         run: bundle exec rake
+        
+      - name: Run Rspec test suite
+        run: rake spec
 
-      - name: Coveralls
+      - name: Run Cucumber Tests
+        run: rake cucumber
+
+      - name: Send test coverage to Coveralls.io
         uses: coverallsapp/github-action@master
-        with:          
+        with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
