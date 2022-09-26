@@ -34,4 +34,4 @@ jobs:
       - name: Send test coverage to Coveralls.io
         uses: coverallsapp/github-action@master
         with:
-          github-token: ${{ secrets.REPO_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
