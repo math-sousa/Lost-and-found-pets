@@ -86,3 +86,5 @@ group :test do
 
 end
 
+#Gem Coveralls
+gem 'coveralls', require: false
