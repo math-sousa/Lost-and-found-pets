@@ -69,6 +69,3 @@ yarn-debug.log*
 /public/uploads
 
 echo coverage >> .gitignore
-
-#Ignora token repo do coveralls
-.coveralls.yml
