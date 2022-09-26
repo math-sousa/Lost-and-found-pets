@@ -44,6 +44,7 @@ gem 'pg'
 
 # Test Coverage
 gem 'simplecov', require: false, group: :test
+gem 'simplecov-lcov', require: false
 
 # Use Sass to process CSS
 # gem "sassc-rails"
@@ -85,6 +86,3 @@ group :test do
   gem "webdrivers"
 
 end
-
-#Gem Coveralls
-gem 'coveralls_reborn', '~> 0.25.0', require: false
