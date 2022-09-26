@@ -1,37 +1,35 @@
-name: Coveralls
+name: "ruby on rails"
 on:
-  pull_request:
-    branches:
-      - main
-      - dev
   push:
-    branches:
-      - main
-      - dev
-
+    branches: [ "main", "dev" ]
+  pull_request:
+    branches: [ "main", "dev" ]
 jobs:
-  build:
-    name: Build and Test
+  test:
     runs-on: ubuntu-latest
+    env:
+      RAILS_ENV: test
     steps:
-      - name: Check out repository code
+      - name: Checkout code
         uses: actions/checkout@v3
-  
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
+      # Add or replace dependency steps here
+      - name: Ruby and Gems install
+        uses: ruby/setup-ruby@0a29871fe2b0200a17a4497bae54fe5df0d973aa # v1.115.3
         with:
-          ruby-version: 3.1.2
+          bundler-cache: true
+      # Add or replace test runners here
+      - name: Run Tests
+        run: bundle exec rake
   
-      - name: Install dependencies
-        run: bundle install
+      - name: Test & publish code coverage
+        uses: paambaati/codeclimate-action@v3.0.0
+        env:
+          CC_TEST_REPORTER_ID: f3db11147c6cfdfc61faca0632f7c1c17202169eb096a171fe437a88432fc22e
+        with:
+          coverageCommand: bundle exec rake
+          debug: true
 
-      - name: Run Rspec test suite
-        run: rake spec
-
-      - name: Run Cucumber Tests
-        run: rake cucumber
-
-      - name: Send test coverage to Coveralls.io
+      - name: Coveralls
         uses: coverallsapp/github-action@master
-        with:
+        with:          
           github-token: ${{ secrets.GITHUB_TOKEN }}
