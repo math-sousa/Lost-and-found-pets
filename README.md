@@ -16,7 +16,7 @@ Desenvolvido por:
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://lost-and-found-for-pets.herokuapp.com/)
 
-![This is an image](https://github.com/math-sousa/Lost-and-found-pets/actions/workflows/basic-workflow.yml/badge.svg)
+![This is an image](https://github.com/math-sousa/Lost-and-found-pets/actions/workflows/ci.yml/badge.svg)
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/4ac318695d8a3dbca0c1/maintainability)](https://codeclimate.com/github/math-sousa/Lost-and-found-pets/maintainability)
 
