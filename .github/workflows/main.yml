@@ -10,11 +10,14 @@ on:
     paths:
       - src/*
       - test/*
-      - '*.json'
+      - *.json
       - yarn.lock
   pull_request:
     paths:
       - '!*.MD'
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
   test:

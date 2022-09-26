@@ -1,0 +1,35 @@
+name: "ruby on rails"
+on:
+  push:
+    branches: [ "main", "dev" ]
+  pull_request:
+    branches: [ "main", "dev" ]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      RAILS_ENV: test
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      # Add or replace dependency steps here
+      - name: Ruby and Gems install
+        uses: ruby/setup-ruby@0a29871fe2b0200a17a4497bae54fe5df0d973aa # v1.115.3
+        with:
+          bundler-cache: true
+      # Add or replace test runners here
+      - name: Run Tests
+        run: bundle exec rake
+  
+      - name: Test & publish code coverage
+        uses: paambaati/codeclimate-action@v3.0.0
+        env:
+          CC_TEST_REPORTER_ID: f3db11147c6cfdfc61faca0632f7c1c17202169eb096a171fe437a88432fc22e
+        with:
+          coverageCommand: bundle exec rake
+          debug: true
+
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:          
+          github-token: ${{ secrets.GITHUB_TOKEN }}
