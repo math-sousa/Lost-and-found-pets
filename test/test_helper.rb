@@ -1,5 +1,5 @@
 require 'coveralls'
-Coveralls.wear!
+Coveralls.wear!('rails')
 
 if ENV['RAILS_ENV'] == 'test'
   require 'simplecov'
