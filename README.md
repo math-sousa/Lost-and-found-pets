@@ -1,6 +1,6 @@
 # Lost and found: pets version
 
-O Lost and Found Pets tem como principal objetivo a divulgação de cachorros e gatos perdidos. Os usuários serão capazes de cadastrar suas informações de contato e características do animal, que serão divulgadas através de um mural na plataforma, a fim de fornecer todos os dados necessários para a pessoa que eventualmente encontrar o pet.
+O Lost and Found Pets tem como principal objetivo a divulgação de cachorros e gatos perdidos. Os usuários serão capazes de cadastrar suas informações de contato e características do animal, que serão divulgadas através de um mural na plataforma, a fim de fornecer todos os dados necessários para a pessoa que eventualmente tiver encontrado um pet.
 
 Desenvolvido por:
 
