@@ -1,4 +1,4 @@
-name: "ruby on rails"
+name: "coveralls"
 on:
   push:
     branches: [ "main", "dev" ]
@@ -20,14 +20,6 @@ jobs:
       # Add or replace test runners here
       - name: Run Tests
         run: bundle exec rake
-  
-      - name: Test & publish code coverage
-        uses: paambaati/codeclimate-action@v3.0.0
-        env:
-          CC_TEST_REPORTER_ID: f3db11147c6cfdfc61faca0632f7c1c17202169eb096a171fe437a88432fc22e
-        with:
-          coverageCommand: bundle exec rake
-          debug: true
 
       - name: Coveralls
         uses: coverallsapp/github-action@master
