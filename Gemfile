@@ -87,4 +87,4 @@ group :test do
 end
 
 #Gem Coveralls
-gem 'coveralls', require: false
+gem 'coveralls_reborn', '~> 0.25.0', require: false
