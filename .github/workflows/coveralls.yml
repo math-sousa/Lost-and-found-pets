@@ -32,6 +32,6 @@ jobs:
         run: rake cucumber
 
       - name: Send test coverage to Coveralls.io
-        uses: coverallsapp/github-action@main
+        uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.REPO_TOKEN }}
