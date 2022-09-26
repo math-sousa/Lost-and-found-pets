@@ -20,14 +20,6 @@ jobs:
       # Add or replace test runners here
       - name: Run Tests
         run: bundle exec rake
-  
-      - name: Test & publish code coverage
-        uses: paambaati/codeclimate-action@v3.0.0
-        env:
-          CC_TEST_REPORTER_ID: d434f6495b55f9da02200d0663f9f08525866738d530107023563903bf5d9334
-        with:
-          coverageCommand: bundle exec rake
-          debug: true
 
       - name: Coveralls
         uses: coverallsapp/github-action@master
