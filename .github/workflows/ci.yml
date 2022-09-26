@@ -62,5 +62,7 @@ jobs:
     - uses: math-sousa/codeclimate-action@v3
       env:
         CC_TEST_REPORTER_ID: d434f6495b55f9da02200d0663f9f08525866738d530107023563903bf5d9334
+        GITHUB_REF_NAME: ${GITHUB_REF#refs/heads/}
+        GITHUB_SHA: $(git rev-parse --short "$GITHUB_SHA")
       with:
         coverageCommand: yarn coverage
