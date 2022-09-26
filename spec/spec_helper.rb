@@ -1,5 +1,4 @@
 require 'simplecov'
-SimpleCov.start 'rails'
 
 require 'coveralls'
 Coveralls.wear!('rails')
