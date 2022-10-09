@@ -1,5 +1,5 @@
 <h1>Novo perfil</h1>
-<%= form_with scope: :perfil, url: new_perfil_path, local: true do |form| %>
+<%= form_with scope: :perfil, url: "/perfil", method: :post, local: true do |form| %>
   <p>
     <%= form.label :nome %><br>
     <%= form.text_field :nome %>
