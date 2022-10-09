@@ -12,7 +12,11 @@ Quando('clico em salvar') do
 end
 
 Então('ele deve ter sido salvo no banco de dados') do
-    pending # Write code here that turns the phrase above into concrete actions
+    perfil = Perfil.order("id").last
+    expect(perfil.nome).to eq('Maria Silva')
+    expect(perfil.email).to eq('maria.silva@gmail.com') 
+    expect(perfil.telefone).to eq('11999999999') 
+    expect(perfil.senha).to eq('senhadamaria') 
 end
 
 Então('deverei ver a mensagem de sucesso {string}') do |string|
