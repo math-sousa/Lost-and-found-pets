@@ -6,6 +6,7 @@ class PerfilController < ApplicationController
         if @perfil.save
             redirect_to '/perfil/'
       end
+    end
     
       private
       def perfil_params
