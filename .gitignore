@@ -13,6 +13,7 @@ pickle-email-*.html
 
 # Ignore all logfiles and tempfiles.
 tmp/
+/tmp/
 /log/*
 /tmp/*
 /tmp/cache/*
