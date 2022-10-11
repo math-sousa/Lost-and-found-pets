@@ -24,13 +24,13 @@ Então('deverei ver a mensagem de sucesso {string}') do |string|
 end
 
 Quando('deixo o campo {string} vazio') do |string|
-    pending # Write code here that turns the phrase above into concrete actions
+    fill_in string, :with => ""
 end
 
 Então('deverei ver a mensagem de erro {string}') do |string|
-    pending # Write code here that turns the phrase above into concrete actions
+    expect(page).to have_content(string)
 end
 
 Dado('um usuário criado com o email {string}') do |string|
-    pending # Write code here that turns the phrase above into concrete actions
+    Factory.create(:minimal_perfil)
 end
