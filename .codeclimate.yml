@@ -1,0 +1,10 @@
+exclude_patterns:
+  - "tests/"
+  - "spec/"
+  - "**/vendor/"
+  - "app/channels/"
+  - "app/jobs/"
+  - "app/mailers/"
+  - "app/helpers/application_helper.rb"
+  - "app/models/application_record.rb"
+  - "app/controllers/application_controller.rb"
