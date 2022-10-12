@@ -1,4 +1,15 @@
 <h1>Novo perfil</h1>
+
+<% if @perfil.errors.any? %>
+  <div>
+    <ul>
+      <% @perfil.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_with scope: :perfil, url: "/perfil", method: :post, local: true do |form| %>
   <p>
     <%= form.label :nome %><br>
