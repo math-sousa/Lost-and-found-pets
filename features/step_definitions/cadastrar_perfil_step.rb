@@ -32,5 +32,6 @@ Então('deverei ver a mensagem de erro {string}') do |string|
 end
 
 Dado('um usuário criado com o email {string}') do |string|
-    Factory.create(:minimal_perfil)
+    @perfil = Perfil.new(:email => string, :nome => 'Maria Silva', :telefone => '11999999999', :senha => 'senhadamaria')
+    @perfil.save
 end
