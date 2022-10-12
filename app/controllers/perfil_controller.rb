@@ -5,10 +5,14 @@ class PerfilController < ApplicationController
         @perfil = Perfil.new(perfil_params) 
         if @perfil.save
             redirect_to '/perfil/'
-      end
+    end
+
+    private
+    def perfil_params
+      params.require(:perfil).permit(:nome, :email, :telefone, :senha)
+    end
     
-      private
-      def perfil_params
-        params.require(:perfil).permit(:nome, :email, :telefone, :senha)
-      end
+    def show
+        @perfil = Perfil.find(params[:id])
+    end
 end
