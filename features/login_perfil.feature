@@ -20,29 +20,28 @@ Dado que estou na página de login
 Quando preencho o campo "Senha" com "senhadamaria"
 E deixo o campo "Email" vazio
 E clico em Entrar
-Então deverei ver a mensagem de erro "É obrigatório informar o email!"
+Então deverei ver a mensagem de erro "Email e/ou senha inválidos"
 
 Cenário: Login com erro, senha vazia
 Dado que estou na página de login
 Quando preencho o campo "Email" com "maria.silva@gmail.com"
 E deixo o campo "Senha" vazio
 E clico em Entrar
-Então deverei ver a mensagem de erro "É obrigatório informar a senha!"
+Então deverei ver a mensagem de erro "Email e/ou senha inválidos"
 
 Cenário: Login com erro, email inválido
 Dado que estou na página de login
 Quando preencho o campo "Email" com "m,,,a#@.com"
 E preencho o campo "Senha" com "senhadamaria"
 E clico em Entrar
-Então deverei ver a mensagem de erro "O email deve ser válido!"
+Então deverei ver a mensagem de erro "Email e/ou senha inválidos"
 
 Cenário: Login com erro, email não cadastrado
-Dado que não existe um usuário com o email "mariasilva@gmail.com"
-E que estou na página de login
+Dado que estou na página de login
 Quando preencho o campo "Email" com "mariasilva@gmail.com"
 E preencho o campo "Senha" com "senhadamaria"
 E clico em Entrar
-Então deverei ver a mensagem de erro "Email não cadastrado"
+Então deverei ver a mensagem de erro "Email e/ou senha inválidos"
 
 Cenário: Login com erro, senha incorreta 
 Dado que o usuário com o email "maria.silva@gmail.com" tem a senha "senhadamaria"
@@ -50,4 +49,4 @@ E que estou na página de login
 Quando preencho o campo "Email" com "maria.silva@gmail.com"
 E preencho o campo "Senha" com "senhadamaria2"
 E clico em Entrar
-Então deverei ver a mensagem de erro "Email não cadastrado"
+Então deverei ver a mensagem de erro "Email e/ou senha inválidos"
