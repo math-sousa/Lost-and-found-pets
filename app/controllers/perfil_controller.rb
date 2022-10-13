@@ -7,6 +7,8 @@ class PerfilController < ApplicationController
             redirect_to '/perfil/'
       end
     end
+    def login
+    end
     
       private
       def perfil_params
