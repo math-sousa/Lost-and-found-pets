@@ -1,15 +1,3 @@
-Dado('que estou no mural de posts') do
-    visit '/mural/index'
-end
-
-Quando('clico em perfil') do
-    pending
-end
-
-Então('deverei ver a página de título {string}') do |string|
-    expect(page).to have_content('MEU PERFIL')
-end
-
 Dado('um usuário cadastrado {string}') do |string|
     @perfil = Perfil.new(:email => string, :nome => 'Maria Silva', :telefone => '11999999999', :senha => 'senhadamaria')
     @perfil.save
