@@ -13,7 +13,7 @@ Quando preencho o campo "Email" com "maria.silva@gmail.com"
 Quando preencho o campo "Telefone" com "11999999999"
 Quando preencho o campo "Senha" com "senhadamaria"
 E clico em salvar
-Então ele deve ter sido salvo no banco de dados
+Então o perfil deve ter sido salvo no banco de dados
 E deverei ver a mensagem de sucesso "Perfil criado com sucesso!"
 
 Cenário: Cadastro de perfil com erro, email vazio
