@@ -25,6 +25,14 @@ RSpec.describe Perfil, type: :model do
     expect(perfil).not_to be_valid
   end
 
+  it 'Invalido sem telefone' do
+    perfil = Perfil.new
+    perfil.email = "maria.silva@gmail.com"
+    perfil.nome = "Maria Silva"
+    perfil.senha = "senhadamaria"
+    expect(perfil).not_to be_valid
+  end
+
   it 'Invalido com email com formato invalido' do
     perfil = Perfil.new
     perfil.nome = "Maria Silva"
