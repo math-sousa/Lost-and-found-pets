@@ -1,0 +1,13 @@
+<h1>Mural</h1>
+
+<!-- Caso nao exista posts -->
+<% if !@posts.any? %>
+    <p>
+        Não há posts para serem mostrados por enquanto.
+    </p>
+<% end %>
+
+<!-- #Caso exista post-->
+<div id="posts">
+    <%= render @posts %>
+</div>
