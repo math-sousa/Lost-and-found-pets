@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get '/login', to: 'perfil#login'
 
 
+  resources :posts
 end
