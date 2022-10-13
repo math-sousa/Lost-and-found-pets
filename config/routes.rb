@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   get '/login', to: 'perfil#login'
   post '/login', to: 'perfil#process_login'
 
+  get '/mural/index', to: 'mural#index' 
   resources :posts
 end
