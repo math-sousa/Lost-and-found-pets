@@ -3,6 +3,10 @@ class PerfilController < ApplicationController
       @perfil = Perfil.new
     end
 
+    def show
+        @perfil = Perfil.find(params[:id])
+    end
+
     def create
         @perfil = Perfil.new(perfil_params) 
         if @perfil.save
@@ -12,9 +16,10 @@ class PerfilController < ApplicationController
           headers["Content-Type"] = "text/hmtl"
       end
     end
-    def login
-      
+
+    def login     
     end
+
     def process_login
       perfil = Perfil.authenticate(params[:email], params[:senha])
       if(perfil)
@@ -34,8 +39,8 @@ class PerfilController < ApplicationController
       end
     end
     
-      private
-      def perfil_params
+    private
+    def perfil_params
         params.require(:perfil).permit(:nome, :email, :telefone, :senha)
-      end
+    end
 end
