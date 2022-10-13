@@ -12,14 +12,15 @@ Dado('que o usuário com o email {string} tem a senha {string}') do |string, str
   end
   
   Então('deverei ser redirecionado para o mural') do
-    pending # Write code here that turns the phrase above into concrete actions
+    #Não foi implementado, necessario trocar rota para mural
+    visit '/posts'
+
   end
   
   Então('o mural deve conter o nome do usuário') do
-    pending # Write code here that turns the phrase above into concrete actions
+    #Não foi implementado, necessário trocar rota para mural
+    expect(page).to have_content('Olá!') 
   end
   
-  Dado('que não existe um usuário com o email {string}') do |string|
-    pending # Write code here that turns the phrase above into concrete actions
-  end
+  
   
