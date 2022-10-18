@@ -31,3 +31,16 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "%{errors}"
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      blank: "is a mandatory field!"
+      taken: "already taken!"
+      invalid: "is invalid!"
+      not_an_integer: "is not numerical!"
+      confirmation: "passwords doesn`t match!"
+      not_a_number: "must be numerical!"
