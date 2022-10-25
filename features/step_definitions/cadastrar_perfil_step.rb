@@ -1,18 +1,17 @@
 
 Dado('que estou na página de cadastro de usuário') do
-    visit '/perfil/new'
+    visit '/signup'
 end
 
-Quando('clico em salvar') do
-    click_on 'Salvar'
+Quando('clico em sign up') do
+    click_on 'Sign up'
 end
 
 Então('o perfil deve ter sido salvo no banco de dados') do
     perfil = Perfil.order("id").last
-    expect(perfil.nome).to eq('Maria Silva')
+    expect(perfil.name).to eq('Maria Silva')
     expect(perfil.email).to eq('maria.silva@gmail.com') 
-    expect(perfil.telefone).to eq('11999999999') 
-    expect(perfil.senha).to eq('senhadamaria') 
+    expect(perfil.phone).to eq('11999999999') 
 end
 
 Então('deverei ver a mensagem de sucesso {string}') do |string|
@@ -24,6 +23,30 @@ Quando('deixo o campo {string} vazio') do |string|
 end
 
 Dado('um usuário criado com o email {string}') do |string|
-    @perfil = Perfil.new(:email => string, :nome => 'Maria Silva', :telefone => '11999999999', :senha => 'senhadamaria')
+    @perfil = Perfil.new(:email => string, :name => 'Maria Silva', :phone => '11999999999', :password => 'senhadamaria', :password_confirmation => 'senhadamaria')
     @perfil.save
+end
+
+Dado('que eu me cadastrei') do
+    steps %Q{
+        Dado que estou na página de cadastro de usuário
+        Quando preencho o campo "Nome" com "Maria Silva"
+        Quando preencho o campo "Email" com "maria.silva@gmail.com"
+        Quando preencho o campo "Telefone" com "11999999999"
+        Quando preencho o campo "Senha" com "senhadamaria"
+        Quando preencho o campo "Confirmação de Senha" com "senhadamaria"
+        E clico em sign up
+    }
+end
+
+Dado('que eu me cadastrei com o email {string}') do |string|
+    steps %Q{
+        Dado que estou na página de cadastro de usuário
+        Quando preencho o campo "Nome" com "Maria Silva"
+        Quando preencho o campo "Email" com "#{string}"
+        Quando preencho o campo "Telefone" com "11999999999"
+        Quando preencho o campo "Senha" com "senhadamaria"
+        Quando preencho o campo "Confirmação de Senha" com "senhadamaria"
+        E clico em sign up
+    }
 end

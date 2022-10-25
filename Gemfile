@@ -80,3 +80,5 @@ group :test do
   gem "webdrivers"
   gem "database_cleaner-active_record"
 end
+gem "devise", "~> 4.8"
+gem "devise-i18n", "~> 1.10"

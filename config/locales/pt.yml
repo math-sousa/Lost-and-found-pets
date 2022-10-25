@@ -1,0 +1,14 @@
+pt:
+  hello: "Olá mundo"
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "%{errors}"
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      blank: "é um campo obrigatório!"
+      taken: "já cadastrado!"
+      invalid: "não é válido!"
+      confirmation: "senhas estão diferentes!"
+      not_a_number: "deve ser numérico!"

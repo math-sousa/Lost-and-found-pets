@@ -1,5 +1,5 @@
 Dado('que o usuário com o email {string} tem a senha {string}') do |string, string2|
-    @perfil = Perfil.new(:email => string, :nome => 'Maria Silva', :telefone => '11999999999', senha: string2)
+    @perfil = Perfil.new(:email => string, :name => 'Maria Silva', :phone => '11999999999', password: string2)
     @perfil.save
   end
   
@@ -7,8 +7,8 @@ Dado('que o usuário com o email {string} tem a senha {string}') do |string, str
     visit '/login'
   end
   
-  Quando('clico em Entrar') do
-    click_on 'Entrar'
+  Quando('clico em Log in') do
+    click_on 'Log in'
   end
   
   Então('deverei ser redirecionado para o mural') do
