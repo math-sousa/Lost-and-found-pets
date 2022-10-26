@@ -1,13 +1,11 @@
 class MuralController < ApplicationController
 
   def index
-<<<<<<< HEAD
     if @posts.present?
 
     else
       @posts = Post.all
     end
-=======
     @posts = Post.all
     @comment = Comment.new
   end
@@ -21,7 +19,6 @@ class MuralController < ApplicationController
 
   private def comment_params 
     params.require(:comment).permit(:content, :post)
->>>>>>> main
   end
 
   def filtro
