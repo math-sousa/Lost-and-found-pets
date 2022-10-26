@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_15_035453) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_26_012507) do
   create_table "perfils", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.string "phone", default: "", null: false
@@ -40,6 +40,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_15_035453) do
     t.text "descricao"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "tipo"
   end
 
 end

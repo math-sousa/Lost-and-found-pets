@@ -1,5 +1,9 @@
 <h1>Mural</h1>
 
+  <p>
+  <%= form.collection_select :tipo, ['Cachorro', 'Gato', 'Outros'], :to_s, :to_s, :include_blank => true%>
+  </p>
+
 <!-- Caso nao exista posts -->
 <% if !@posts.any? %>
     <p>
