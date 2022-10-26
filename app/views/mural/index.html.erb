@@ -1,3 +1,10 @@
+<div>
+    <% if perfil_signed_in? %>
+      <%= link_to 'Meu Perfil', edit_perfil_registration_path, :class => 'navbar-link' %> 
+      <%= link_to "Novo Post", new_post_path, :class => 'navbar-link'  %>
+    <% end %>
+</div>
+
 <h1>Mural</h1>
 
 <%= form_with scope: :post, url: mural_index_path, local: true do |form| %>
@@ -17,7 +24,21 @@
     </p>
 <% end %>
 
+<% if @comment.errors.any? %>
+    <div id="error_explanation">
+        <h2><%= pluralize(@comment.errors.count, "erro") %> impedem que o comentario seja gravado no banco de dados:</h2>
+    
+        <ul>
+        <% @comment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+        </ul>
+    </div>
+<% end %>
+
 <!-- #Caso exista post-->
 <div id="posts">
-    <%= render @posts %>
+    <%@posts.each do |post|%>
+        <%= render 'posts/post', post: post %>
+    <%end%>
 </div>

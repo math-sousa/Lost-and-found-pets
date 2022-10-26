@@ -1,4 +1,4 @@
-<div  id=<%= post_path(post.id) %>>
+<div>
 
     <p>
     <strong>Título:</strong>
@@ -11,7 +11,37 @@
     </p>
 
     <p>
+<<<<<<< HEAD
     <strong>Animal:</strong>
     <%= post.animal %>
     </p>
+=======
+    <strong>Tipo:</strong>
+    <%= post.tipo %>
+    </p>
+
+    <!-- Comments Listing -->
+    <ul style="margin-left: 5%">
+        <% post.comments.each do |comment| %>
+            <li> Comentário: <%= comment.content %></li>
+        <% end %>
+    </ul>
+
+    <!-- Comment Input Field -->
+    <%= form_with scope: :comment, url: mural_create_comment_path, local: true do |form| %>
+
+        <p>
+            <%= form.label "Comente:" %><br>
+            <%= form.text_area :content, { :id => 'Comentario' } %>
+        </p>
+        <p>
+            <%= form.number_field :post, id: :post,  value: post.id, type: :hidden %>
+        </p>
+        <p>
+            <%= form.submit 'Enviar' %>
+        </p>
+
+    <% end %>
+
+>>>>>>> main
 </div>

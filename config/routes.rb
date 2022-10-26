@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   end
 
   get '/mural/index', to: 'mural#index' 
+  post '/mural/create_comment', to: 'mural#create_comment' 
 
   post '/mural/filtro', to: 'mural#filtro'
 
