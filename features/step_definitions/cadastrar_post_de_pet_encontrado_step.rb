@@ -18,3 +18,9 @@ end
 Quando('clico em Voltar para mural') do
     click_on 'Voltar para o mural'
 end
+
+Então('deverei ver o post de pet encontrado na página do mural') do
+    expect(page).to have_content("Cachorro YorkShire perdido em 10/08")
+    expect(page).to have_content("Cachorro atende pelo nome de 'Lulu'. Encontrado no bairro dos laranjais, próximo a Rua Vale do Rio Doce.")
+    expect(page).to have_content("encontrado")
+end
