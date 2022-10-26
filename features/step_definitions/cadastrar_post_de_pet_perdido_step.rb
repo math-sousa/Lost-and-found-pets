@@ -31,7 +31,7 @@ Então('deverei ver a mensagem de erro {string}') do |string|
     expect(page).to have_content(string)
 end
 
-Quando('clico na opção Pet perdido') do      
+Quando('clico na opção Perdido') do      
     choose("post_tipo_perdido")
 end
   

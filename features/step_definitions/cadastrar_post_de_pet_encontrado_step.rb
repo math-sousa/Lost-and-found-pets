@@ -1,4 +1,4 @@
-Quando('clico na opção Pet encontrado') do      
+Quando('clico na opção Encontrado') do      
     choose("post_tipo_encontrado")
 end
   
