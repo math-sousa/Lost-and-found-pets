@@ -25,3 +25,22 @@ Dado('que estou na página de mural') do
     expect(post.descricao).to eq(string2)
   end
 
+  Quando('clico em {string}') do |string|
+    click_on string
+  end
+  
+  Então('deverei estar na página de criar post') do
+    pending # Write code here that turns the phrase above into concrete actions
+  end
+  
+  Então('deverei estar na página de login') do
+    pending # Write code here that turns the phrase above into concrete actions
+  end
+  
+  Então('deverei estar na página de criar perfil') do
+    pending # Write code here that turns the phrase above into concrete actions
+  end
+  
+  Então('deverei estar na página de perfil') do
+    pending # Write code here that turns the phrase above into concrete actions
+  end

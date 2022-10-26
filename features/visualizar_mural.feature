@@ -49,5 +49,5 @@ Então deverei estar na página de criar perfil
 Cenário: Acessar a funcionalidade de perfil
 Dado que eu me cadastrei
 E que estou na página de mural
-Quando clico em "Meu perfil"
+Quando clico em "Meu Perfil"
 Então deverei estar na página de perfil
