@@ -1,6 +1,6 @@
 <div>
     <% if perfil_signed_in? %>
-      <%= link_to 'Meu Perfil',  :class => 'navbar-link' %> 
+      <%= link_to 'Meu Perfil', edit_perfil_registration_path, :class => 'navbar-link' %> 
       <%= link_to "Novo Post", new_post_path, :class => 'navbar-link'  %>
     <% end %>
 </div>

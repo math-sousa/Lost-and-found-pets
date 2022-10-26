@@ -35,14 +35,7 @@ Dado('que estou na página de mural') do
     expect(page).to have_content("Descricao")
   end
   
-  Então('deverei estar na página de login') do
-    pending # Write code here that turns the phrase above into concrete actions
-  end
-  
-  Então('deverei estar na página de criar perfil') do
-    pending # Write code here that turns the phrase above into concrete actions
-  end
-  
   Então('deverei estar na página de perfil') do
-    pending # Write code here that turns the phrase above into concrete actions
+    expect(page).to have_content("Email")
+    expect(page).to have_content("Senha")
   end
