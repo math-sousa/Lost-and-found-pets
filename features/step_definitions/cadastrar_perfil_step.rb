@@ -8,10 +8,7 @@ Quando('clico em sign up') do
 end
 
 Então('o perfil deve ter sido salvo no banco de dados') do
-    perfil = Perfil.order("id").last
-    expect(perfil.name).to eq('Maria Silva')
-    expect(perfil.email).to eq('maria.silva@gmail.com') 
-    expect(perfil.phone).to eq('11999999999') 
+    expect(Perfil.last.name).to eq('Maria Silva')
 end
 
 Então('deverei ver a mensagem de sucesso {string}') do |string|

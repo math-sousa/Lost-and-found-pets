@@ -24,6 +24,12 @@
   </p>
 
   <p>
+    <b>Você perdeu ou encontrou um pet?</b>
+      <%= form.radio_button :tipo, 'perdido', :checked => true %> Pet perdido
+      <%= form.radio_button :tipo, 'encontrado' %> Pet encontrado<br />
+  </p>
+
+  <p>
     <%= form.submit 'Criar novo post' %>
   </p>
 <% end %>

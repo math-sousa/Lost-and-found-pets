@@ -25,3 +25,17 @@ Dado('que estou na página de mural') do
     expect(post.descricao).to eq(string2)
   end
 
+  Quando('clico em {string}') do |string|
+    click_on string
+  end
+  
+  Então('deverei estar na página de criar post') do
+    expect(page).to have_content("Novo Post")
+    expect(page).to have_content("Titulo")
+    expect(page).to have_content("Descricao")
+  end
+  
+  Então('deverei estar na página de perfil') do
+    expect(page).to have_content("Email")
+    expect(page).to have_content("Senha")
+  end
