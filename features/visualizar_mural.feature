@@ -36,16 +36,6 @@ E que estou na página de mural
 Quando clico em "Novo Post"
 Então deverei estar na página de criar post
 
-Cenário: Acessar a funcionalidade de login
-Dado que estou na página de mural
-Quando clico em "Login"
-Então deverei estar na página de login
-
-Cenário: Acessar a funcionalidade de criar conta
-Dado que estou na página de mural
-Quando clico em "Signup"
-Então deverei estar na página de criar perfil
-
 Cenário: Acessar a funcionalidade de perfil
 Dado que eu me cadastrei
 E que estou na página de mural
