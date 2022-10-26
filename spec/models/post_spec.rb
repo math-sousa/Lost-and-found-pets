@@ -5,21 +5,21 @@ RSpec.describe Post, type: :model do
 
   it 'invalido sem titulo' do
     post = Post.new
-    post.tipo = 'Cachorro'
+    post.animal = 'Cachorro'
     post.descricao = "Alguma descricao."
     expect(post).not_to be_valid
   end
 
   it 'invalido sem descrição' do
     post = Post.new
-    post.tipo = 'Cachorro'
+    post.animal = 'Cachorro'
     post.titulo = "Algum titulo."
     expect(post).not_to be_valid
   end
 
   it 'invalido - titulo com formato invalido' do
     post = Post.new
-    post.tipo = 'Cachorro'
+    post.animal = 'Cachorro'
     post.titulo = "∞ ♫ ♬ ♭ ♮ ♯ ♰ ♱ ✁ ✂ ✃ ✄ ✆ ✇ ✈ ✉ ✌ ✍ ✎ ✏ ✐ ✑ ✒ ✓ ✔ ✕ ✖ ✗ ✘ ✙ ✚ ✛ ✜ ✝ ✞ ✟ ✠ ✡ ✢ ✣ ✤ ✥ ✦ ✧ ✩ ✪ ✫ ✬ ✭ ✮ ✯ ✰ ✱"
     post.descricao = "Alguma descricao."   
     expect(post).not_to be_valid
@@ -27,13 +27,13 @@ RSpec.describe Post, type: :model do
 
   it 'invalido - descrição com formato invalido' do
     post = Post.new
-    post.tipo = 'Cachorro'
+    post.animal = 'Cachorro'
     post.titulo = "Algum titulo."
     post.descricao = "∞ ♫ ♬ ♭ ♮ ♯ ♰ ♱ ✁ ✂ ✃ ✄ ✆ ✇ ✈ ✉ ✌ ✍ ✎ ✏ ✐ ✑ ✒ ✓ ✔ ✕ ✖ ✗ ✘ ✙ ✚ ✛ ✜ ✝ ✞ ✟ ✠ ✡ ✢ ✣ ✤ ✥ ✦ ✧ ✩ ✪ ✫ ✬ ✭ ✮ ✯ ✰ ✱"   
     expect(post).not_to be_valid
   end
 
-  it 'invalido sem tipo' do
+  it 'invalido sem animal' do
     post = Post.new
     post.titulo = 'abcd'
     post.descricao = "Alguma descricao."

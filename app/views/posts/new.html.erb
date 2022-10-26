@@ -19,12 +19,12 @@
   </p>
   
   <p>
-  <%= form.collection_select :tipo, ['Cachorro', 'Gato', 'Outros'], :to_s, :to_s, :include_blank => true%>
-  </p>
-
-  <p>
     <%= form.label :descricao %><br>
     <%= form.text_field :descricao %>
+  </p>
+  
+  <p>
+  <%= form.collection_select :animal, ['Cachorro', 'Gato', 'Outros'], :to_s, :to_s, :include_blank => true, id: :animal%>
   </p>
 
   <p>

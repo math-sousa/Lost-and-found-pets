@@ -17,5 +17,7 @@ Rails.application.routes.draw do
 
   get '/mural/index', to: 'mural#index' 
 
+  post '/mural/filtro', to: 'mural#filtro'
+
   resources :posts
 end

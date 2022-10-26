@@ -20,6 +20,7 @@ Dado que eu me cadastrei
 E que estou na página de cadastro de post
 Quando preencho o campo "Titulo" com "Cachorro YorkShire perdido em 10/08"
 Quando preencho o campo "Descricao" com "Cachorro atende pelo nome de 'Lulu'. Desapareceu no bairro dos laranjais, próximo a Rua Vale do Rio Doce."
+Quando clico no dropdown "Animal" e seleciono "Cachorro"
 E clico em criar
 Então ele deve ter sido salvo no banco de dados
 E deverei ver o post na página do mural
