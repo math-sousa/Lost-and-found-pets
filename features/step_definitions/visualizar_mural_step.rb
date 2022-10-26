@@ -30,7 +30,9 @@ Dado('que estou na página de mural') do
   end
   
   Então('deverei estar na página de criar post') do
-    pending # Write code here that turns the phrase above into concrete actions
+    expect(page).to have_content("Novo Post")
+    expect(page).to have_content("Titulo")
+    expect(page).to have_content("Descricao")
   end
   
   Então('deverei estar na página de login') do
