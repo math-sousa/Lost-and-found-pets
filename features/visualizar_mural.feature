@@ -29,3 +29,25 @@ Dado que eu me cadastrei
 E que estou na página de mural
 Quando existem posts cadastrados
 Então eu devo visualizar o último post cadastrado no banco de dados contendo titulo "Cachorro YorkShire perdido em 10/08" e descricao "Cachorro atende pelo nome de 'Lulu'. Desapareceu no bairro dos laranjais, próximo a Rua Vale do Rio Doce."
+
+Cenário: Acessar a funcionalidade de criar um post
+Dado que eu me cadastrei
+E que estou na página de mural
+Quando clico em "Novo Post"
+Então deverei estar na página de criar post
+
+Cenário: Acessar a funcionalidade de login
+Dado que estou na página de mural
+Quando clico em "Login"
+Então deverei estar na página de login
+
+Cenário: Acessar a funcionalidade de criar conta
+Dado que estou na página de mural
+Quando clico em "Signup"
+Então deverei estar na página de criar perfil
+
+Cenário: Acessar a funcionalidade de perfil
+Dado que eu me cadastrei
+E que estou na página de mural
+Quando clico em "Meu perfil"
+Então deverei estar na página de perfil
