@@ -15,7 +15,13 @@ Dado('que estou na página de mural') do
   end
 
   Quando("existem posts cadastrados") do
-    @post = Post.new(:titulo=>'Cachorro YorkShire perdido em 10/08', :descricao=>"Cachorro atende pelo nome de 'Lulu'. Desapareceu no bairro dos laranjais, próximo a Rua Vale do Rio Doce.")
+    @post = Post.new(:titulo=>'Cachorro YorkShire perdido em 10/08', :descricao=>"Cachorro atende pelo nome de 'Lulu'. Desapareceu no bairro dos laranjais, próximo a Rua Vale do Rio Doce.", :animal=>"Cachorro")
+    @post.save
+
+    @post = Post.new(:titulo=>'Gato perdido em 10/08', :descricao=>"Gato atende pelo nome de 'Mimi'.", :animal=>"Gato")
+    @post.save
+
+    @post = Post.new(:titulo=>'Papagaio perdido em 10/08', :descricao=>"Papagaio atende pelo nome de 'Prupru'.", :animal=>"Outros")
     @post.save
   end
   

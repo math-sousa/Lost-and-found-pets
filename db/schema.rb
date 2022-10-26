@@ -48,6 +48,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_26_134154) do
     t.text "descricao"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "animal"
     t.string "tipo"
   end
 

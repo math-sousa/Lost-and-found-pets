@@ -7,6 +7,16 @@
 
 <h1>Mural</h1>
 
+<%= form_with scope: :post, url: mural_index_path, local: true do |form| %>
+    <p>
+    <%= form.collection_select :animal, ['Cachorro', 'Gato', 'Outros'], :to_s, :to_s, :include_blank => true, id: :animal%>
+    </p>
+
+    <p>
+    <%= form.submit 'Filtrar' %>
+    </p>
+<% end %>
+
 <!-- Caso nao exista posts -->
 <% if !@posts.any? %>
     <p>
