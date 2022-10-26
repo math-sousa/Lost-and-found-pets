@@ -14,11 +14,13 @@ Então('ele deve ter sido salvo no banco de dados') do
     post = Post.order("id").last
     expect(post.titulo).to eq("Cachorro YorkShire perdido em 10/08")
     expect(post.descricao).to eq("Cachorro atende pelo nome de 'Lulu'. Desapareceu no bairro dos laranjais, próximo a Rua Vale do Rio Doce.")
+    expect(post.tipo).to eq("perdido")
 end
 
 Então('deverei ver o post na página do post') do
     expect(page).to have_content("Cachorro YorkShire perdido em 10/08")
     expect(page).to have_content("Cachorro atende pelo nome de 'Lulu'. Desapareceu no bairro dos laranjais, próximo a Rua Vale do Rio Doce.")
+    expect(page).to have_content("perdido")
 end
 
 Quando('deixo o campo {string} vázio') do |string|
@@ -28,3 +30,8 @@ end
 Então('deverei ver a mensagem de erro {string}') do |string|
     expect(page).to have_content(string)
 end
+
+Quando('clico na opção Pet perdido') do      
+    choose("post_tipo_perdido")
+end
+  
