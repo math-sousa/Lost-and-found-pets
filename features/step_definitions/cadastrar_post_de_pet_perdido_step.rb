@@ -11,10 +11,7 @@ Quando('clico em criar') do
 end
 
 Então('ele deve ter sido salvo no banco de dados') do
-    post = Post.order("id").last
-    expect(post.titulo).to eq("Cachorro YorkShire perdido em 10/08")
-    expect(post.descricao).to eq("Cachorro atende pelo nome de 'Lulu'. Desapareceu no bairro dos laranjais, próximo a Rua Vale do Rio Doce.")
-    expect(post.tipo).to eq("perdido")
+    expect(Post.last.titulo).to eq("Cachorro YorkShire perdido em 10/08")
 end
 
 Então('deverei ver o post na página do post') do
