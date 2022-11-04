@@ -1,8 +1,3 @@
-Dado('que estou na página Meu Perfil') do
-    perfil = Perfil.order("id").last
-    visit edit_perfil_registration_path(perfil.id)
-end
-
 Dado('que meu nome de usuário cadastrado é {string}') do |string|
     pending # Write code here that turns the phrase above into concrete actions
 end
