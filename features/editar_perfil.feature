@@ -25,15 +25,9 @@ Cenário: editar telefone com sucesso
 Dado que eu me cadastrei
 E que estou na página meu perfil
 Quando preencho o campo "Telefone" com "11999999998"
-E clico em "Salvar"
-Então o campo "Telefone" deve estar preenchido com "11999999998"
-
-Cenário: editar senha com sucesso
-Dado que eu me cadastrei
+Quando clico em "Salvar"
 E que estou na página meu perfil
-Quando preencho o campo "Senha" com "senha123"
-E clico em "Salvar"
-Então o campo "Senha" deve estar preenchido com "senha123"
+Então o campo "Telefone" deve estar preenchido com "11999999998"
 
 Cenário: editar nome com erro, nome vazio
 Dado que eu me cadastrei
@@ -61,11 +55,4 @@ Dado que eu me cadastrei
 E que estou na página meu perfil
 Quando deixo o campo "Telefone" vazio
 E clico em "Salvar"
-Então deverei ver a mensagem de erro "O teelfone não pode ser deixado em branco!"
-
-Cenário: editar senha com erro, senha vazia
-Dado que eu me cadastrei
-E que estou na página meu perfil
-Quando deixo o campo "Senha" vazio
-E clico em "Salvar"
-Então deverei ver a mensagem de erro "A senha não pode ser deixada em branco!"
+Então deverei ver a mensagem de erro "O telefone não pode ser deixado em branco!"
