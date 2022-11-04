@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :perfils
+  devise_for :perfils, controllers: {registrations: 'registrations'}
 
   devise_scope :perfil do
     get 'login', to: 'devise/sessions#new'
