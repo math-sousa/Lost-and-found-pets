@@ -34,25 +34,26 @@ Dado que eu me cadastrei
 E que estou na página meu perfil
 Quando deixo o campo "Nome" vazio
 E clico em "Salvar"
-Então deverei ver a mensagem de erro "O nome não pode ser deixado em branco!"
+Então deverei ver a mensagem de erro "Nome é um campo obrigatório!"
 
 Cenário: editar email com erro, email vazio
 Dado que eu me cadastrei
 E que estou na página meu perfil
 Quando deixo o campo "Email" vazio
 E clico em "Salvar"
-Então deverei ver a mensagem de erro "O email não pode ser deixado em branco!"
+Então deverei ver a mensagem de erro "Email é um campo obrigatório!"
 
 Cenário: editar email com erro, email já cadastrado
-Dado que eu me cadastrei
+Dado um usuário criado com o email "maria.silva@gmail.com"
+E que eu me cadastrei com o email "maria.antonieta@gmail.com"
 E que estou na página meu perfil
 Quando preencho o campo "Email" com "maria.silva@gmail.com"
 E clico em "Salvar"
-Então deverei ver a mensagem de erro "Este email já está cadastrado!"
+Então deverei ver a mensagem de erro "Email já cadastrado!"
 
 Cenário: editar telefone com erro, telefone vazio
 Dado que eu me cadastrei
 E que estou na página meu perfil
 Quando deixo o campo "Telefone" vazio
 E clico em "Salvar"
-Então deverei ver a mensagem de erro "O telefone não pode ser deixado em branco!"
+Então deverei ver a mensagem de erro "Telefone é um campo obrigatório!"

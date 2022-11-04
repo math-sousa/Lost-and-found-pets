@@ -36,6 +36,5 @@ Dado('que estou na página de mural') do
   end
   
   Então('deverei estar na página de perfil') do
-    expect(page).to have_content("Email")
-    expect(page).to have_content("Senha")
+    expect(page).to have_content("Editar Perfil")
   end
