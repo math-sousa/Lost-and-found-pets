@@ -79,8 +79,9 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
   gem "database_cleaner-active_record"
+  gem "rails-controller-testing", "~> 1.0"
+  gem "factory_bot_rails"
 end
 gem "devise", "~> 4.8"
 gem "devise-i18n", "~> 1.10"
 
-gem "rails-controller-testing", "~> 1.0"
