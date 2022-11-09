@@ -37,7 +37,7 @@ pt:
       updated: "Sua senha foi alterada com sucesso. Você agora está logado."
       updated_not_active: "Sua senha foi alterada com sucesso."
     registrations:
-      destroyed: "Tchau! Sua conta foi cancelada com sucesso. Esperamos você de volta em breve."
+      destroyed: "Sua conta foi deletada com sucesso. Esperamos você de volta em breve."
       signed_up: "Bem-vindo! Você se registrou com sucesso."
       signed_up_but_locked: "Você se registrou com sucesso. No entanto, você não pode logar-se pois sua conta está bloqueada."
       signed_up_but_unconfirmed: "Uma mensagem com um link de confirmação foi enviado para o seu endereço de email. Por favor sigua o link para ativar a sua conta."
