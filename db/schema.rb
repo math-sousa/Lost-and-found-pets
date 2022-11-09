@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_26_134154) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_09_030552) do
   create_table "comments", force: :cascade do |t|
     t.text "content"
     t.integer "post_id"
@@ -38,8 +38,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_26_134154) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
+    t.integer "posts_id"
     t.index ["confirmation_token"], name: "index_perfils_on_confirmation_token", unique: true
     t.index ["email"], name: "index_perfils_on_email", unique: true
+    t.index ["posts_id"], name: "index_perfils_on_posts_id"
     t.index ["reset_password_token"], name: "index_perfils_on_reset_password_token", unique: true
   end
 
@@ -49,6 +51,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_26_134154) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "tipo"
+    t.integer "perfil_id", null: false
+    t.index ["perfil_id"], name: "index_posts_on_perfil_id"
   end
 
+  add_foreign_key "perfils", "posts", column: "posts_id"
+  add_foreign_key "posts", "perfils"
 end
