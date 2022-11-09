@@ -27,8 +27,8 @@ E deverei ver o post na página do mural
 
 Cenário: Visualizar o ultimo post com sucesso
 Dado que eu me cadastrei
+E que existe um post cadastrado
 E que estou na página de mural
-Quando existem posts cadastrados
 Então eu devo visualizar o último post cadastrado no banco de dados contendo titulo "Cachorro YorkShire perdido em 10/08" e descricao "Cachorro atende pelo nome de 'Lulu'. Desapareceu no bairro dos laranjais, próximo a Rua Vale do Rio Doce."
 
 Cenário: Acessar a funcionalidade de criar um post
