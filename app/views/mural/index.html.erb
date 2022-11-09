@@ -19,9 +19,9 @@
         <h2><%= pluralize(@comment.errors.count, "erro") %> impedem que o comentario seja gravado no banco de dados:</h2>
     
         <ul>
-        <% @comment.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-        <% end %>
+            <% @comment.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
         </ul>
     </div>
 <% end %>

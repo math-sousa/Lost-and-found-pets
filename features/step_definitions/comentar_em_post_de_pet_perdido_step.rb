@@ -1,7 +1,11 @@
 
 Dado('que existe um post cadastrado') do
-    @post = Post.new(:titulo=>'Cachorro YorkShire perdido em 10/08', :descricao=>"Cachorro atende pelo nome de 'Lulu'. Desapareceu no bairro dos laranjais, próximo a Rua Vale do Rio Doce.")
-    @post.save
+    steps %Q{
+        Dado que estou na página de cadastro de post
+        Quando preencho o campo "Titulo" com "Cachorro YorkShire perdido em 10/08"
+        Quando preencho o campo "Descricao" com "Cachorro atende pelo nome de 'Lulu'. Desapareceu no bairro dos laranjais, próximo a Rua Vale do Rio Doce."
+        E clico em criar
+    }
 end
 
 Quando('clico em enviar') do

@@ -15,6 +15,10 @@
     <%= post.tipo %>
     </p>
 
+    <% if current_perfil == post.perfil%>
+        <%=link_to "Editar post", edit_post_path(post.id) %>
+    <% end %>
+
     <!-- Comments Listing -->
     <ul style="margin-left: 5%">
         <% post.comments.each do |comment| %>
