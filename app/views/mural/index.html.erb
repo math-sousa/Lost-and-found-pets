@@ -6,7 +6,11 @@
 </div>
 
 <h1>Mural</h1>
-
+<select name="tipo" id="tipo">
+  <option value="post_tipo_todos">Todos</option>
+  <option value="post_tipo_perdido">Perdidos</option>
+  <option value="post_tipo_encontrado">Encontrado</option>
+</select>
 <!-- Caso nao exista posts -->
 <% if !@posts.any? %>
     <p>
