@@ -28,10 +28,11 @@ RSpec.describe "Posts", type: :request do
       #add post
       post = create :post, perfil: perfil
 
-      put "/posts/1", params: {post: { titulo: 'algum titulo', descricao: 'alguma coisa', tipo: 'pet perdido'}}
+      put "/posts/1", params: {post: { titulo: 'algum titulo', descricao: 'alguma coisa', tipo: 'pet perdido', local: 'algum local'}}
       post = Post.order("id").last
       expect(post.titulo).to be_eql('algum titulo')
       expect(post.descricao).to be_eql('alguma coisa')
+      expect(post.local).to be_eql('algum local')
       expect(post.tipo).to be_eql('pet perdido')
     end
     it "redirects to the login page when user not logged in" do

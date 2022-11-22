@@ -2,11 +2,12 @@ Quando('clico na opção Encontrado') do
     choose("post_tipo_encontrado")
 end
   
-Então('o post deve ter sido salvo no banco de dados com o título {string}, a descricao {string} e o tipo {string}') do |string, string2, string3|
+Então('o post deve ter sido salvo no banco de dados com o título {string}, a descricao {string} , o tipo {string} e o local {string}') do |string, string2, string3, string4|    
     post = Post.order("id").last
     expect(post.titulo).to eq(string)
     expect(post.descricao).to eq(string2)
     expect(post.tipo).to eq(string3)
+    expect(post.local).to eq(string4)
 end
   
 

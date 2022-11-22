@@ -22,8 +22,9 @@ E que existe um post cadastrado
 E que estou na página de edição do primeiro post
 Quando preencho o campo "Titulo" com "Cachorro YorkShire perdido em 10/08"
 Quando preencho o campo "Descricao" com "Cachorro atende pelo nome de 'Lulu'. Desapareceu no bairro dos laranjais, próximo a Rua Vale do Rio Doce."
+Quando preencho o campo "Local" com "São Paulo, SP - Freguesia do Ó"
 E clico em editar
-Então o post deve ter sido salvo no banco de dados com o título "Cachorro YorkShire perdido em 10/08", a descricao "Cachorro atende pelo nome de 'Lulu'. Desapareceu no bairro dos laranjais, próximo a Rua Vale do Rio Doce." e o tipo "perdido"
+Então o post deve ter sido salvo no banco de dados com o título "Cachorro YorkShire perdido em 10/08", a descricao "Cachorro atende pelo nome de 'Lulu'. Desapareceu no bairro dos laranjais, próximo a Rua Vale do Rio Doce." , o tipo "perdido" e o local "São Paulo, SP - Freguesia do Ó"
 E deverei ver o post na página do post
 
 Cenário: Edição de post com erro - título vázio
@@ -31,6 +32,7 @@ Dado que eu me cadastrei
 E que existe um post cadastrado
 E que estou na página de edição do primeiro post
 Quando preencho o campo "Descricao" com "Cachorro atende pelo nome de 'Lulu'. Desapareceu no bairro dos laranjais, próximo a Rua Vale do Rio Doce."
+Quando preencho o campo "Local" com "São Paulo, SP - Freguesia do Ó"
 E deixo o campo "Titulo" vázio
 E clico em editar
 Então deverei ver a mensagem de erro "Titulo é um campo obrigatório!"
@@ -40,6 +42,7 @@ Dado que eu me cadastrei
 E que existe um post cadastrado
 E que estou na página de edição do primeiro post
 Quando preencho o campo "Titulo" com "54941105465108"
+Quando preencho o campo "Local" com "São Paulo, SP - Freguesia do Ó"
 Quando preencho o campo "Descricao" com "Cachorro atende pelo nome de 'Lulu'. Desapareceu no bairro dos laranjais, próximo a Rua Vale do Rio Doce."
 E clico em editar
 Então deverei ver a mensagem de erro "Titulo deve possuir caracteres alfabéticos!"
@@ -49,6 +52,7 @@ Dado que eu me cadastrei
 E que existe um post cadastrado
 E que estou na página de edição do primeiro post
 Quando preencho o campo "Titulo" com "∞ ♫ ♬ ♭ ♮ ♯ ♰ ♱ ✁ ✂ ✃ ✄ ✆ ✇ ✈ ✉ ✌ ✍ ✎ ✏ ✐ ✑ ✒ ✓ ✔ ✕ ✖ ✗ ✘ ✙ ✚ ✛ ✜ ✝ ✞ ✟ ✠ ✡ ✢ ✣ ✤ ✥ ✦ ✧ ✩ ✪ ✫ ✬ ✭ ✮ ✯ ✰ ✱"
+Quando preencho o campo "Local" com "São Paulo, SP - Freguesia do Ó"
 Quando preencho o campo "Descricao" com "Cachorro atende pelo nome de 'Lulu'. Desapareceu no bairro dos laranjais, próximo a Rua Vale do Rio Doce."
 E clico em editar
 Então deverei ver a mensagem de erro "Titulo deve possuir caracteres alfabéticos!"
@@ -58,6 +62,7 @@ Dado que eu me cadastrei
 E que existe um post cadastrado
 E que estou na página de edição do primeiro post
 Quando preencho o campo "Titulo" com "Cachorro YorkShire perdido em 10/08"
+Quando preencho o campo "Local" com "São Paulo, SP - Freguesia do Ó"
 E deixo o campo "Descricao" vázio
 E clico em editar
 Então deverei ver a mensagem de erro "Descricao é um campo obrigatório!"
@@ -67,6 +72,7 @@ Dado que eu me cadastrei
 E que existe um post cadastrado
 E que estou na página de edição do primeiro post
 Quando preencho o campo "Titulo" com "Cachorro YorkShire perdido em 10/08"
+Quando preencho o campo "Local" com "São Paulo, SP - Freguesia do Ó"
 Quando preencho o campo "Descricao" com "548918165485161816"
 E clico em editar
 Então deverei ver a mensagem de erro "Descricao deve possuir caracteres alfabéticos!"
@@ -76,6 +82,37 @@ Dado que eu me cadastrei
 E que existe um post cadastrado
 E que estou na página de edição do primeiro post
 Quando preencho o campo "Titulo" com "Cachorro YorkShire perdido em 10/08"
+Quando preencho o campo "Local" com "São Paulo, SP - Freguesia do Ó"
 Quando preencho o campo "Descricao" com "∞ ♫ ♬ ♭ ♮ ♯ ♰ ♱ ✁ ✂ ✃ ✄ ✆ ✇ ✈ ✉ ✌ ✍ ✎ ✏ ✐ ✑ ✒ ✓ ✔ ✕ ✖ ✗ ✘ ✙ ✚ ✛ ✜ ✝ ✞ ✟ ✠ ✡ ✢ ✣ ✤ ✥ ✦ ✧ ✩ ✪ ✫ ✬ ✭ ✮ ✯ ✰ ✱"
 E clico em editar
 Então deverei ver a mensagem de erro "Descricao deve possuir caracteres alfabéticos!"
+
+Cenário: Edição de post com erro - local vazio
+Dado que eu me cadastrei
+E que existe um post cadastrado
+E que estou na página de edição do primeiro post
+Quando preencho o campo "Titulo" com "Cachorro YorkShire perdido em 10/08"
+Quando preencho o campo "Descricao" com "Cachorro atende pelo nome de 'Lulu'. Desapareceu no bairro dos laranjais, próximo a Rua Vale do Rio Doce."
+E deixo o campo "Local" vázio
+E clico em editar
+Então deverei ver a mensagem de erro "Local é um campo obrigatório!"
+
+Cenário: Edição de post com erro - local só possui números
+Dado que eu me cadastrei
+E que existe um post cadastrado
+E que estou na página de edição do primeiro post
+Quando preencho o campo "Titulo" com "Cachorro YorkShire perdido em 10/08"
+Quando preencho o campo "Descricao" com "Cachorro atende pelo nome de 'Lulu'. Desapareceu no bairro dos laranjais, próximo a Rua Vale do Rio Doce."
+Quando preencho o campo "Local" com "548918165485161816"
+E clico em editar
+Então deverei ver a mensagem de erro "Local deve possuir caracteres alfabéticos!"
+
+Cenário: Edição de post com erro - local só possui caractéres especiais
+Dado que eu me cadastrei
+E que existe um post cadastrado
+E que estou na página de edição do primeiro post
+Quando preencho o campo "Titulo" com "Cachorro YorkShire perdido em 10/08"
+Quando preencho o campo "Descricao" com "Cachorro atende pelo nome de 'Lulu'. Desapareceu no bairro dos laranjais, próximo a Rua Vale do Rio Doce."
+Quando preencho o campo "Local" com "∞ ♫ ♬ ♭ ♮ ♯ ♰ ♱ ✁ ✂ ✃ ✄ ✆ ✇ ✈ ✉ ✌ ✍ ✎ ✏ ✐ ✑ ✒ ✓ ✔ ✕ ✖ ✗ ✘ ✙ ✚ ✛ ✜ ✝ ✞ ✟ ✠ ✡ ✢ ✣ ✤ ✥ ✦ ✧ ✩ ✪ ✫ ✬ ✭ ✮ ✯ ✰ ✱"
+E clico em editar
+Então deverei ver a mensagem de erro "Local deve possuir caracteres alfabéticos!"

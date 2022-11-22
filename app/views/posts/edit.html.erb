@@ -24,6 +24,11 @@
   </p> 
 
   <p>
+    <%= form.label :local %><br>
+    <%= form.text_field :local %>
+  </p> 
+
+  <p>
     <b>Você perdeu ou encontrou um pet?</b>
       <%= form.radio_button :tipo, 'perdido', :checked => true %> Pet perdido
       <%= form.radio_button :tipo, 'encontrado' %> Pet encontrado<br />
