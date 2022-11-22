@@ -3,6 +3,7 @@ FactoryBot.define do
     titulo {'titulo'}
     descricao {'descricao'}
     tipo {'pet perdido'}
+    local {'local'}
     perfil {''}
   end
 end

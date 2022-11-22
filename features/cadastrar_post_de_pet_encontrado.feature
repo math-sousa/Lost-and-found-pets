@@ -13,7 +13,7 @@ Quando preencho o campo "Descricao" com "Gato possui a coleira com o nome de Bel
 Quando preencho o campo "Local" com "São Paulo, SP - Freguesia do Ó"
 Quando clico na opção Encontrado
 E clico em criar
-Então o post deve ter sido salvo no banco de dados com o título "Gato encontrado na Barra Funda.", a descricao "Gato possui a coleira com o nome de Belinha, por favor me contatar." e o tipo "encontrado"
+Então o post deve ter sido salvo no banco de dados com o título "Gato encontrado na Barra Funda.", a descricao "Gato possui a coleira com o nome de Belinha, por favor me contatar." , o tipo "encontrado" e o local "São Paulo, SP - Freguesia do Ó"
 E deverei ver o post de pet encontrado na página do post
 
 Cenário: Cadastro de post com erro - título vázio
@@ -95,7 +95,7 @@ Quando preencho o campo "Titulo" com "Gato encontrado na Barra Funda."
 Quando clico na opção Encontrado
 E deixo o campo "Local" vázio
 E clico em criar
-Então deverei ver a mensagem de erro "Titulo é um campo obrigatório!"
+Então deverei ver a mensagem de erro "Local é um campo obrigatório!"
 
 Cenário: Cadastro de post com erro - local só possui números
 Dado que eu me cadastrei
@@ -105,7 +105,7 @@ Quando preencho o campo "Descricao" com "Gato possui a coleira com o nome de Bel
 Quando preencho o campo "Local" com "54941105465108"
 Quando clico na opção Encontrado
 E clico em criar
-Então deverei ver a mensagem de erro "Titulo deve possuir caracteres alfabéticos!"
+Então deverei ver a mensagem de erro "Local deve possuir caracteres alfabéticos!"
 
 Cenário: Cadastro de post com erro - local só possui caractéres especiais
 Dado que eu me cadastrei
@@ -115,4 +115,4 @@ Quando preencho o campo "Descricao" com "Gato possui a coleira com o nome de Bel
 Quando preencho o campo "Local" com "∞ ♫ ♬ ♭ ♮ ♯ ♰ ♱ ✁ ✂ ✃ ✄ ✆ ✇ ✈ ✉ ✌ ✍ ✎ ✏ ✐ ✑ ✒ ✓ ✔ ✕ ✖ ✗ ✘ ✙ ✚ ✛ ✜ ✝ ✞ ✟ ✠ ✡ ✢ ✣ ✤ ✥ ✦ ✧ ✩ ✪ ✫ ✬ ✭ ✮ ✯ ✰ ✱"
 Quando clico na opção Encontrado
 E clico em criar
-Então deverei ver a mensagem de erro "Titulo deve possuir caracteres alfabéticos!"
+Então deverei ver a mensagem de erro "Local deve possuir caracteres alfabéticos!"
