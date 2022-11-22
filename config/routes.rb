@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
   get '/mural/index', to: 'mural#index' 
   post '/mural/create_comment', to: 'mural#create_comment' 
+  
+  delete '/mural/comments/:id', to: 'mural#destroy_comment' 
 
   resources :posts
 end

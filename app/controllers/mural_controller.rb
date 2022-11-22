@@ -11,6 +11,16 @@ class MuralController < ApplicationController
     headers["Content-Type"] = "text/html"
   end
 
+  def destroy_comment 
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+
+    respond_to do |format|
+      format.html { redirect_to "/mural/index" }
+      format.js
+    end
+  end
+  
   private def comment_params 
     params.require(:comment).permit(:content, :post)
   end

@@ -23,6 +23,7 @@
     <ul style="margin-left: 5%">
         <% post.comments.each do |comment| %>
             <li> Comentário: <%= comment.content %></li>
+            <%= button_to "Deletar comentário", mural_destroy_comment_path, method: :delete , params: {id: comment.id}%>
         <% end %>
     </ul>
 
@@ -41,5 +42,5 @@
         </p>
 
     <% end %>
-
+    
 </div>
