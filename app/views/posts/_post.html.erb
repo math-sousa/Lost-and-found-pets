@@ -2,7 +2,7 @@
 
     <p>
     <strong>Autor:</strong>
-    <%= post.perfil.name %>
+    <%= link_to post.perfil.name, perfil_path(post.perfil) %>
     </p>
 
     <p>
