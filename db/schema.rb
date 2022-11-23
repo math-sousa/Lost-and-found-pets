@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_22_005954) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_23_200448) do
   create_table "comments", force: :cascade do |t|
     t.text "content"
     t.integer "post_id"
@@ -51,6 +51,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_22_005954) do
     t.string "tipo"
     t.integer "perfil_id", null: false
     t.string "local"
+    t.string "encontrado"
     t.index ["perfil_id"], name: "index_posts_on_perfil_id"
   end
 

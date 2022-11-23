@@ -28,6 +28,10 @@
     <% if current_perfil == post.perfil%>
         <%=link_to "Editar post", edit_post_path(post.id) %>
     <% end %>
+    
+    <% if post.encontrado == '1' %>
+        <p>PET ENCONTRADO</p>
+    <% end %>
 
     <!-- Comments Listing -->
     <ul style="margin-left: 5%">
