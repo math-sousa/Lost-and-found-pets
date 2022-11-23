@@ -5,7 +5,7 @@ end
 
 Então('o post deve ter sido salvo no banco de dados como encontrado') do
     post = Post.order("id").last
-    expect(post.encontrado).to eq(true)
+    expect(post.encontrado).to eq(true || '1')
 end
 
 Então('deverei ver {string} na página do post') do |string|
