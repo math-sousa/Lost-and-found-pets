@@ -33,6 +33,11 @@
       <%= form.radio_button :tipo, 'perdido', :checked => true %> Pet perdido
       <%= form.radio_button :tipo, 'encontrado' %> Pet encontrado<br />
   </p>
+  
+  <p>
+    <b>Este pet foi encontrado por você (caso tenha perdido) ou pelo dono (caso tenha encontrado)?</b>
+      <%= form.check_box :encontrado %> Sim
+  </p>
 
   <p>
     <%= form.submit 'Editar' %>
