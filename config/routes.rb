@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     
   end
 
+
+  get '/perfils/show/:id', to: 'perfils#show', as: 'perfil'
   get '/mural/index', to: 'mural#index' 
   post '/mural/create_comment', to: 'mural#create_comment' 
 
