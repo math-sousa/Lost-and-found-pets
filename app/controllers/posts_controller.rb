@@ -24,12 +24,16 @@ class PostsController < ApplicationController
     def update
         @post = Post.find(params[:id])
         respond_to do |format|
-            if @post.update(post_params)
-                format.html { redirect_to post_url(@post), notice: "O post foi editado com sucesso." }
-                format.json { render :show, status: :ok, location: @classroom }
-            else
-                format.html { render :edit, status: :unprocessable_entity }
-                format.json { render json: @post.errors, status: :unprocessable_entity }
+            if has_new_likes(post_params, @post) && @post.update(post_params)
+                format.html { redirect_to mural_index_url, notice: "O post foi curtido com sucesso." }
+            else 
+                if @post.update(post_params)
+                    format.html { redirect_to post_url(@post), notice: "O post foi editado com sucesso." }
+                    format.json { render :show, status: :ok, location: @classroom }
+                else
+                    format.html { render :edit, status: :unprocessable_entity }
+                    format.json { render json: @post.errors, status: :unprocessable_entity }
+                end
             end
         end
     end
@@ -39,6 +43,10 @@ class PostsController < ApplicationController
     end
 
     def post_params 
-        params.require(:post).permit(:titulo, :descricao, :tipo, :local, :encontrado)
+        params.require(:post).permit(:titulo, :descricao, :tipo, :local, :encontrado, :curtidas)
+    end
+
+    def has_new_likes(post_params, post)
+        return post.curtidas < (post_params[:curtidas].nil? ? 0 : post_params[:curtidas]).to_i
     end
 end

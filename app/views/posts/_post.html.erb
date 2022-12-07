@@ -25,6 +25,15 @@
     <%= post.local %>
     </p>
 
+    <p>
+    <%= post.curtidas.nil? ? 0 : post.curtidas %> Curtida(s)
+    </p>
+
+    <p>
+    <strong>Criado em:</strong>
+    <%= post.created_at.strftime("%d / %m / %Y") %>
+    </p>
+
     <% if current_perfil == post.perfil%>
         <%=link_to "Editar post", edit_post_path(post.id) %>
     <% end %>
@@ -32,5 +41,5 @@
     <% if post.encontrado == '1' %>
         <p>PET ENCONTRADO</p>
     <% end %>
-
+    
 </div>

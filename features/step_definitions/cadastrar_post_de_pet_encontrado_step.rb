@@ -25,4 +25,5 @@ Então('deverei ver o post de pet encontrado na página do mural') do
     expect(page).to have_content("Gato encontrado na Barra Funda.")
     expect(page).to have_content("Gato possui a coleira com o nome de Belinha, por favor me contatar.")
     expect(page).to have_content("encontrado")
+    expect(page).to have_content("Criado em: ")
 end

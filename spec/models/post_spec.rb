@@ -42,5 +42,14 @@ RSpec.describe Post, type: :model do
     post.local = "∞ ♫ ♬ ♭ ♮ ♯ ♰ ♱ ✁ ✂ ✃ ✄ ✆ ✇ ✈ ✉ ✌ ✍ ✎ ✏ ✐ ✑ ✒ ✓ ✔ ✕ ✖ ✗ ✘ ✙ ✚ ✛ ✜ ✝ ✞ ✟ ✠ ✡ ✢ ✣ ✤ ✥ ✦ ✧ ✩ ✪ ✫ ✬ ✭ ✮ ✯ ✰ ✱"   
     expect(post).not_to be_valid
   end
+
+  it 'curtidas negativas' do
+    post = Post.new
+    post.titulo = "Algum titulo."
+    post.descricao = "Alguma descrição."
+    post.local = "Algum local"
+    post.curtidas = -1
+    expect(post).not_to be_valid
+  end
 end
 
