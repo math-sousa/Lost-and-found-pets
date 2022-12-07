@@ -1,0 +1,13 @@
+<h2>Comentários de <%= @perfil.name %></h2>
+<% if @comments.length() > 0 %>
+    <div id="comments">
+        <%@comments.each do |comment|%>
+            <div id="comment">
+                <%= link_to "Post de "+comment.post.perfil.name, '/posts/' + comment.post.id.to_s %>
+                <p>Comentário <%= comment.content %></p>
+            </div>
+        <%end%>
+    </div>
+<% else %>
+    <p>Ainda não há comentários deste usuário.</p>
+<% end %>

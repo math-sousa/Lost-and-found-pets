@@ -4,6 +4,7 @@ FactoryBot.define do
     descricao {'descricao'}
     tipo {'pet perdido'}
     local {'local'}
+    encontrado {false}
     perfil {''}
     curtidas {10}
   end
