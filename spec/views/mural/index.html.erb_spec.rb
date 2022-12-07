@@ -140,4 +140,19 @@ RSpec.describe "mural/index.html.erb", type: :view do
 
     expect(rendered).to have_button("Curtir")
   end
+  
+  it "render the filter button" do
+    #log in
+    my_profile = create :perfil, :maria
+    sign_in my_profile 
+
+    #add post
+    post = create :post, perfil: my_profile
+    @posts = Post.all
+    @comment = Comment.new
+
+    render
+
+    expect(rendered).to have_content("Mostrar apenas pets já encontrados")
+  end
 end

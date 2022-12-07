@@ -16,6 +16,17 @@
 
 <!-- #Caso exista post-->
 <div id="posts">
+    <% if request.url.include? 'encontrado' %>
+        <% if request.url.include? 'false' %>
+            <%= link_to 'Mostrar apenas pets já encontrados', mural_index_path(:encontrado=>true), :class => 'navbar-link' %> 
+        <%else%>
+            <%= link_to 'Mostrar todos os pets', mural_index_path(:encontrado=>false), :class => 'navbar-link' %> 
+        <%end%>    
+    <%else%>
+        <p>asfsadfasdfasdg</p>
+        <%= link_to 'Mostrar apenas pets já encontrados', mural_index_path(:encontrado=>true), :class => 'navbar-link' %> 
+    <%end%>
+
     <%@posts.each do |post|%>
         <%= render 'posts/post', post: post %>
     <%end%>
