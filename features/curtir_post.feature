@@ -17,4 +17,11 @@ E que existe um post cadastrado
 E que estou na página de mural
 Quando clico em "Curtir"
 Então o número de curtidas do post deve ter aumentado
-E o número atualizado deve ter sido mostrado
+E o número de curtidas do post deve ser 1
+
+Cenário: Curtir um post pela N-ésima vez com sucesso
+Dado que eu me cadastrei
+E que existe um post cadastrado
+E que já curti um post
+Quando clico em "Curtir"
+Então o número de curtidas do post deve ser 2
