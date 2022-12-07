@@ -56,11 +56,18 @@
     <% end %>
 
     <!-- Comments Listing -->
-    <ul style="margin-left: 5%">
-        <% post.comments.each do |comment| %>
-            <li> Comentário: <%= comment.content %></li>
-        <% end %>
-    </ul>
+    <% if post.comments.length > 0 %>
+        <%= link_to 'Esconder/mostrar comentários', '', class: 'hide', data: {'comment_section_id' => 'comment_section_'+ post.id.to_s }, id: 'hide_comments' %>
+        <div class='comment' id="<%= 'comment_section_' + post.id.to_s %>">
+            <ul style="margin-left: 5%">
+                <% post.comments.each do |comment| %>
+                    <li> Comentário: <%= comment.content %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% else %>
+        <p>Este post não possui comentários!</p>
+    <% end %>
 
     <!-- Comment Input Field -->
     <%= form_with scope: :comment, url: mural_create_comment_path, local: true do |form| %>
@@ -77,7 +84,4 @@
         </p>
 
     <% end %>
-    
-
-
 </div>
