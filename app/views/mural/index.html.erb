@@ -14,21 +14,48 @@
     </p>
 <% end %>
 
-<% if @comment.errors.any? %>
-    <div id="error_explanation">
-        <h2><%= pluralize(@comment.errors.count, "erro") %> impedem que o comentario seja gravado no banco de dados:</h2>
-    
-        <ul>
-            <% @comment.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
-            <% end %>
-        </ul>
-    </div>
-<% end %>
-
 <!-- #Caso exista post-->
 <div id="posts">
     <%@posts.each do |post|%>
         <%= render 'posts/post', post: post %>
+        <!-- Comments Listing -->
+        <% if post.comments.length > 0 %>
+            <%= link_to 'Esconder/mostrar comentários', '', class: 'hide', data: {'comment_section_id' => 'comment_section_'+ post.id.to_s }, id: 'hide_comments' %>
+            <div class='comment' id="<%= 'comment_section_' + post.id.to_s %>">
+                <ul style="margin-left: 5%">
+                    <% post.comments.each do |comment| %>
+                        <li> Comentário: <%= comment.content %></li>
+                    <% end %>
+                </ul>
+            </div>
+        <% else %>
+            <p>Este post não possui comentários!</p>
+        <% end %>
+        <% if @comment.errors.any? %>
+            <div id="error_explanation">
+                <h2><%= pluralize(@comment.errors.count, "erro") %> impedem que o comentario seja gravado no banco de dados:</h2>
+            
+                <ul>
+                    <% @comment.errors.full_messages.each do |msg| %>
+                        <li><%= msg %></li>
+                    <% end %>
+                </ul>
+            </div>
+        <% end %>
+        <!-- Comment Input Field -->
+        <%= form_with scope: :comment, url: mural_create_comment_path, local: true do |form| %>
+
+            <p>
+                <%= form.label "Comente:" %><br>
+                <%= form.text_area :content, { :id => 'Comentario' } %>
+            </p>
+            <p>
+                <%= form.number_field :post, id: :post,  value: post.id, type: :hidden %>
+            </p>
+            <p>
+                <%= form.submit 'Enviar' %>
+            </p>
+
+        <% end %>
     <%end%>
 </div>

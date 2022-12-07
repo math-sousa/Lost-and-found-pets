@@ -8,11 +8,13 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    
+    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
   </head>
 
-  <body>
+  <%= content_tag :body, data: { action: action_name, controller: controller_name} do %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
-  </body>
+  <% end %>
 </html>
