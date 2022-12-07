@@ -5,5 +5,6 @@ FactoryBot.define do
     tipo {'pet perdido'}
     local {'local'}
     perfil {''}
+    curtidas {10}
   end
 end
