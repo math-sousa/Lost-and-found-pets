@@ -121,7 +121,7 @@ RSpec.describe "mural/index.html.erb", type: :view do
 
     render
 
-    rendered.should have_content("10 Curtida(s)")
+    expect(rendered).to have_content("10 Curtida(s)")
   end
 
   it "render the like button" do
@@ -138,6 +138,6 @@ RSpec.describe "mural/index.html.erb", type: :view do
 
     render
 
-    rendered.should have_button("Curtir")
+    expect(rendered).to have_button("Curtir")
   end
 end
