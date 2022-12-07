@@ -41,5 +41,47 @@
     <% if post.encontrado == '1' %>
         <p>PET ENCONTRADO</p>
     <% end %>
-    
+
+    <%= form_with scope: :post, url: post_url(id: post.id), method: :patch do |form|%>
+        <%= form.hidden_field :titulo, :value => post.titulo %>
+        <%= form.hidden_field :descricao, :value => post.descricao %>
+        <%= form.hidden_field :local, :value => post.local %>
+        <%= form.hidden_field :tipo, :value => post.tipo %>
+        <%= form.hidden_field :encontrado, :value => post.encontrado %> 
+        <%= form.hidden_field :curtidas, :value => post.curtidas.nil? ? 1 : post.curtidas + 1 %>
+
+        <p>
+            <%= form.submit 'Curtir' %>
+        </p>
+    <% end %>
+
+    <!-- Comments Listing -->
+    <% if post.comments.length > 0 %>
+        <%= link_to 'Esconder/mostrar comentários', '', class: 'hide', data: {'comment_section_id' => 'comment_section_'+ post.id.to_s }, id: 'hide_comments' %>
+        <div class='comment' id="<%= 'comment_section_' + post.id.to_s %>">
+            <ul style="margin-left: 5%">
+                <% post.comments.each do |comment| %>
+                    <li> Comentário: <%= comment.content %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% else %>
+        <p>Este post não possui comentários!</p>
+    <% end %>
+
+    <!-- Comment Input Field -->
+    <%= form_with scope: :comment, url: mural_create_comment_path, local: true do |form| %>
+
+        <p>
+            <%= form.label "Comente:" %><br>
+            <%= form.text_area :content, { :id => 'Comentario' } %>
+        </p>
+        <p>
+            <%= form.number_field :post, id: :post,  value: post.id, type: :hidden %>
+        </p>
+        <p>
+            <%= form.submit 'Enviar' %>
+        </p>
+
+    <% end %>
 </div>
