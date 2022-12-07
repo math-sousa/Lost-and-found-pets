@@ -5,7 +5,13 @@ Eu como usuário
 Para conseguir dar visibilidade a um post
 Quero poder curtir um post
 
-Cenário: Curtir um post com sucesso
+Cenário: Post sem curtidas
+Dado que eu me cadastrei
+E que existe um post cadastrado
+E que estou na página de mural
+Então o número de curtidas do post deve ser 0
+
+Cenário: Curtir um post pela primeira vez com sucesso
 Dado que eu me cadastrei
 E que existe um post cadastrado
 E que estou na página de mural

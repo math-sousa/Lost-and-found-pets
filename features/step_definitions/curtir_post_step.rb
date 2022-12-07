@@ -6,3 +6,7 @@ end
 Então('o número atualizado deve ter sido mostrado') do
     expect(page).to have_content("1 Curtida(s)")
 end
+
+Então('o número de curtidas do post deve ser {int}') do |int|
+    expect(page).to have_content(int.to_s + " Curtida(s)")
+end
