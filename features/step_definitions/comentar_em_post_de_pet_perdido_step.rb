@@ -15,4 +15,6 @@ end
 
 Então('deverei ver que o comentário contendo {string}') do |string|
     expect(page).to have_content(string)
+    expect(page).to have_content("Criado em: #{Time.now.strftime("%d/%m/%Y")}")
+    expect(page).to have_content("Nome: #{Perfil.last.name}")
   end

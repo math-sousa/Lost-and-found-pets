@@ -61,7 +61,7 @@
         <div class='comment' id="<%= 'comment_section_' + post.id.to_s %>">
             <ul style="margin-left: 5%">
                 <% post.comments.each do |comment| %>
-                    <li> Comentário: <%= comment.content %></li>
+                    <li>Nome: <%=comment.perfil.name%> Criado em: <%= comment.created_at.strftime("%d/%m/%Y") %><br/>Comentário: <%= comment.content %></li>
                 <% end %>
             </ul>
         </div>
