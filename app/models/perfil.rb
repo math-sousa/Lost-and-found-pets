@@ -8,5 +8,6 @@ class Perfil < ActiveRecord::Base
     validates :phone, presence: true, format: { without: /[a-zA-Z]/}
 
     has_many :posts
+    has_many :comments, through: :posts
     
 end

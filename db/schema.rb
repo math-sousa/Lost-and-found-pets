@@ -10,12 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_23_200448) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_06_234903) do
   create_table "comments", force: :cascade do |t|
     t.text "content"
     t.integer "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "perfil_id", null: false
+    t.index ["perfil_id"], name: "index_comments_on_perfil_id"
     t.index ["post_id"], name: "index_comments_on_post_id"
   end
 
@@ -51,9 +53,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_23_200448) do
     t.string "tipo"
     t.integer "perfil_id", null: false
     t.string "local"
-    t.string "encontrado"
+    t.string "encontrado", default: false
     t.index ["perfil_id"], name: "index_posts_on_perfil_id"
   end
 
+  add_foreign_key "comments", "perfils"
   add_foreign_key "posts", "perfils"
 end
