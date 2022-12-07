@@ -24,7 +24,7 @@ class PostsController < ApplicationController
     def update
         @post = Post.find(params[:id])
         respond_to do |format|
-            if (@post.curtidas < (post_params[:curtidas].nil? ? 0 : post_params[:curtidas]).to_i) && @post.update(post_params)
+            if has_new_likes(post_params, @post) && @post.update(post_params)
                 format.html { redirect_to mural_index_url, notice: "O post foi curtido com sucesso." }
             else 
                 if @post.update(post_params)
@@ -44,5 +44,9 @@ class PostsController < ApplicationController
 
     def post_params 
         params.require(:post).permit(:titulo, :descricao, :tipo, :local, :encontrado, :curtidas)
+    end
+
+    def has_new_likes(post_params, post)
+        return post.curtidas < (post_params[:curtidas].nil? ? 0 : post_params[:curtidas]).to_i
     end
 end
