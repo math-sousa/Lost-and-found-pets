@@ -12,6 +12,7 @@ Dado('que estou na página de mural') do
   Então('deverei ver o post na página do mural') do
     expect(page).to have_content("Cachorro YorkShire perdido em 10/08")
     expect(page).to have_content("Cachorro atende pelo nome de 'Lulu'. Desapareceu no bairro dos laranjais, próximo a Rua Vale do Rio Doce.")
+    expect(page).to have_content("Criado em:")
   end
   
   Então('eu devo visualizar o último post cadastrado no banco de dados contendo titulo {string} e descricao {string}') do |string, string2|

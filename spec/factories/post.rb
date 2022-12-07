@@ -6,5 +6,6 @@ FactoryBot.define do
     local {'local'}
     encontrado {false}
     perfil {''}
+    curtidas {10}
   end
 end

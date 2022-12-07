@@ -28,7 +28,7 @@ RSpec.describe "Posts", type: :request do
       #add post
       post = create :post, perfil: perfil
 
-      put "/posts/1", params: {post: { titulo: 'algum titulo', descricao: 'alguma coisa', tipo: 'pet perdido', local: 'algum local'}}
+      put "/posts/1", params: {post: { titulo: 'algum titulo', descricao: 'alguma coisa', tipo: 'pet perdido', local: 'algum local', curtidas: 20}}
       post = Post.order("id").last
       expect(post.titulo).to be_eql('algum titulo')
       expect(post.descricao).to be_eql('alguma coisa')
@@ -37,6 +37,28 @@ RSpec.describe "Posts", type: :request do
     end
     it "redirects to the login page when user not logged in" do
       put "/posts/1"
+      expect(response).to have_http_status(:redirect)
+      expect(response).to redirect_to("/perfils/sign_in")
+    end
+  end
+
+  describe "POST /update" do
+    it "post is created" do
+      #log in
+      perfil = create(:perfil, :maria)
+      sign_in perfil
+
+      post "/posts", params: {post: { titulo: 'algum titulo', descricao: 'alguma coisa', tipo: 'pet perdido', local: 'algum local', curtidas: 20}}
+      publicacao = Post.order("id").last
+      expect(publicacao.titulo).to be_eql('algum titulo')
+      expect(publicacao.descricao).to be_eql('alguma coisa')
+      expect(publicacao.local).to be_eql('algum local')
+      expect(publicacao.tipo).to be_eql('pet perdido')
+      expect(publicacao.curtidas).to be_eql(20)
+    end
+
+    it "redirects to the login page when user not logged in" do
+      post "/posts"
       expect(response).to have_http_status(:redirect)
       expect(response).to redirect_to("/perfils/sign_in")
     end

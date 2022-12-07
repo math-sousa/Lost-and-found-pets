@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_06_234903) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_07_024429) do
   create_table "comments", force: :cascade do |t|
     t.text "content"
     t.integer "post_id"
@@ -53,7 +53,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_234903) do
     t.string "tipo"
     t.integer "perfil_id", null: false
     t.string "local"
-    t.string "encontrado", default: false
+    t.boolean "encontrado", default: false
+    t.integer "curtidas", default: 0
     t.index ["perfil_id"], name: "index_posts_on_perfil_id"
   end
 

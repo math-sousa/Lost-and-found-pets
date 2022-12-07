@@ -39,6 +39,8 @@
       <%= form.check_box :encontrado %> Sim
   </p>
 
+  <%= form.hidden_field :curtidas, :value => @post.curtidas.nil? ? 0 : @post.curtidas %>
+
   <p>
     <%= form.submit 'Editar' %>
   </p>
