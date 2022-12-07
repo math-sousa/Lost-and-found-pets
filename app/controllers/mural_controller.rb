@@ -5,7 +5,7 @@ class MuralController < ApplicationController
   end
 
   def create_comment
-    @comment = Post.find_by(id: comment_params[:post]).comments.create(content: comment_params[:content])
+    @comment = Post.find_by(id: comment_params[:post]).comments.create(content: comment_params[:content], perfil_id: current_perfil.id)
     @posts = Post.all
     render :index, status: :unprocessable_entity, content_type: "text/html"
     headers["Content-Type"] = "text/html"
