@@ -19,6 +19,7 @@ Então('deverei ver o post na página do post') do
     expect(page).to have_content("Cachorro atende pelo nome de 'Lulu'. Desapareceu no bairro dos laranjais, próximo a Rua Vale do Rio Doce.")
     expect(page).to have_content("perdido")
     expect(page).to have_content("São Paulo, SP - Freguesia do Ó")
+    expect(page).to have_content("Criado em:")
 end
 
 Quando('deixo o campo {string} vázio') do |string|

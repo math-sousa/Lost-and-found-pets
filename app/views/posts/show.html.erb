@@ -18,6 +18,12 @@
   <%= @post.local %>
 </p>
 
+<p>
+  <strong>Criado em:</strong>
+  <%= @post.created_at.strftime("%d / %m / %Y") %>
+</p>
+
+
 <% if @post.encontrado == '1' %>
   <p>PET ENCONTRADO</p>
 <% end %>
