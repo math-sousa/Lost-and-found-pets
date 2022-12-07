@@ -52,7 +52,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_07_024429) do
     t.integer "perfil_id", null: false
     t.string "local"
     t.boolean "encontrado", default: false
-    t.integer "curtidas"
+    t.integer "curtidas", default: 0
     t.index ["perfil_id"], name: "index_posts_on_perfil_id"
   end
 
