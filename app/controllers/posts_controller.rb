@@ -21,6 +21,19 @@ class PostsController < ApplicationController
         @post = Post.find(params[:id])
     end
 
+    def destroy
+        puts("CHAMOU O DELETAAAAAAAAR <<<<<<<<<<<<<<<")
+        @post = Post.find(params[:id])
+        @post.destroy
+        respond_to do |format|
+            format.html { redirect_to mural_index_url, notice: "Post deletado com sucesso!" }
+        end
+    end
+
+    def edit
+        @post = Post.find(params[:id])
+    end
+
     def update
         @post = Post.find(params[:id])
         respond_to do |format|

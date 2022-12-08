@@ -44,4 +44,7 @@
   <p>
     <%= form.submit 'Editar' %>
   </p>
+
 <% end %>
+
+<%= button_to "Deletar post", post_path(@post.id), :method => :delete %>
