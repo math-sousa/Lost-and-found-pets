@@ -1,6 +1,11 @@
 class MuralController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = nil
+    if params[:encontrado] == 'true'
+      @posts = Post.where(encontrado:'1')
+    else
+      @posts = Post.all
+    end
     @comment = Comment.new
   end
 
